@@ -16,10 +16,9 @@ contract NFT is ERC721Enumerable, Ownable {
         _usdtTokenAddress = usdtTokenAddress;
     }
 
-    function mint(address to, string memory _tokenURI) public {
+    function mint(address to) public {
         uint256 tokenId = _nextTokenId++;
         _safeMint(to, tokenId);
-        _setTokenURI(tokenId, _tokenURI);
     }
 
     function depositUSDT(uint256 amount) public {
