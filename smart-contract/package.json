@@ -7,7 +7,8 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
+    "compile": "hardhat compile --network mainnet",
     "deploy": "hardhat run scripts/deploy.js --network amoy",
     "deploy:prod": "hardhat run scripts/deploy.js --network mainnet",
     "verify": "hardhat verify --network mainnet 0xe1bAA348D80FA2Ce80657a61726EBA783247F87d"
@@ -27,12 +28,15 @@
     "ethers": "^6.15.0",
     "hardhat": "^2.26.1",
     "hardhat-gas-reporter": "^2.3.0",
+    "nodemon": "^3.1.10",
     "solidity-coverage": "^0.8.0"
   },
   "type": "commonjs",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "ipfs-http-client": "^60.0.1",
     "multer": "^2.0.2",
     "nft.storage": "^7.2.0"
   }

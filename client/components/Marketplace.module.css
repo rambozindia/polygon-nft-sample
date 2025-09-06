@@ -1,0 +1,38 @@
+.marketplace {
+  width: 100%;
+  padding: 2rem;
+}
+
+.nftGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.nftCard {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nftCard h3 {
+  margin-top: 0;
+}
+
+.nftCard button {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #0070f3;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nftCard button:hover {
+  background-color: #005bb5;
+}

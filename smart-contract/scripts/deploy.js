@@ -20,8 +20,15 @@ async function main() {
     abi: JSON.parse(nft.interface.formatJson()),
   };
 
+  const abiPath = "../client/src/NFT.json";
+  if (fs.existsSync(abiPath)) {
+    const timestamp = new Date().toISOString().replace(/:/g, '-').replace(/\..+/, '');
+    fs.copyFileSync(abiPath, `${abiPath}.bak-${timestamp}`);
+    console.log(`Backed up existing ABI to ${abiPath}.bak-${timestamp}`);
+  }
+
   fs.writeFileSync(
-    "../client/src/NFT.json",
+    abiPath,
     JSON.stringify(data)
   );
 }

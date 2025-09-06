@@ -11,6 +11,7 @@ const MintNFT = ({ signer }) => {
         const nftContract = new ethers.Contract(NFT.address, NFT.abi, signer);
         const tx = await nftContract.mint(address);
         await tx.wait();
+        console.log("Transaction Hash:", tx.hash);
         console.log("NFT minted successfully!");
       } catch (error) {
         console.error(error);
